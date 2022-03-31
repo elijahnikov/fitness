@@ -22,6 +22,7 @@ const config: ChakraConfig = {
 
 
 const theme = extendTheme({
+  config,
   components: {
     Button: {
       baseStyle: {
