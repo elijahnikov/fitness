@@ -10,16 +10,10 @@ const breakpoints = createBreakpoints({
   xl: '80em',
 })
 
-export interface ChakraConfig {
-  initialColorMode: ColorMode;
-  useSystemColorMode: boolean;
-}
-
-const config: ChakraConfig = {
-  initialColorMode: 'dark',
+const config = {
+  initialColorMode: "dark",
   useSystemColorMode: false,
-};
-
+}
 
 const theme = extendTheme({
   config,
