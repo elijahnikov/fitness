@@ -5,7 +5,7 @@ import { createWithApollo } from './createWithApollo'
 import { PaginatedActivity } from '../generated/graphql';
 
 export const createClient = (ctx: NextPageContext) => new ApolloClient({
-    uri: process.env.NEXT_PUBLIC_API_URL, //CHANGE TO ENV VARIABLE 
+    uri: process.env.NEXT_PUBLIC_API_URL as string, //CHANGE TO ENV VARIABLE 
     credentials: 'include',
     headers: {
         cookie: (isServer() ? ctx?.req?.headers.cookie : undefined) || "",
