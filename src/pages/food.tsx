@@ -102,7 +102,7 @@ const Food: React.FC<{}> = ({}) => {
                             </Box>
                         ):
 
-                        data.foods.foods.length === 0 ?
+                        data?.foods?.foods?.length === 0 ?
 
                         <Box textAlign={'center'} alignItems='center'>
                             <Text>Cannot find any saved food, either search term is not found or you have not saved any food.</Text>
@@ -111,7 +111,7 @@ const Food: React.FC<{}> = ({}) => {
                         :(
                             <Box display='flex' justifyContent={'center'}>
                                 <Stack width='100%'spacing={4}>
-                                    {data.foods.foods.map((f) => !f ? <div>Nothing here</div> : (
+                                    {data.foods?.foods?.map((f) => !f ? <div>Nothing here</div> : (
                                         <Box position='relative' borderRadius={10} border='1px' 
                                             borderColor='#2B2B2B'
                                             bg='#0C0E10' key={f.id} p={4}>

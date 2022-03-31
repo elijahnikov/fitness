@@ -105,7 +105,7 @@ const Workout: React.FC<{}> = ({}) => {
                                 </Box>
                             ): 
 
-                            data.workouts.workouts.length === 0 ?
+                            data?.workouts?.workouts?.length === 0 ?
 
                             <Box textAlign={'center'} alignItems='center'>
                                 <Text>
@@ -116,7 +116,7 @@ const Workout: React.FC<{}> = ({}) => {
                             : (
                                 <Box display={'flex'} justifyContent='center'>
                                     <Stack width={'100%'} spacing={4}> 
-                                        {data.workouts.workouts.map((w) => !w ? <div>Nothing here</div> : (
+                                        {data?.workouts?.workouts?.map((w) => !w ? <div>Nothing here</div> : (
                                             <Box position={'relative'} borderRadius={10} border='1px' 
                                                 borderColor='#2B2B2B'
                                                 bg='#0C0E10' key={w.id} p={4}>
