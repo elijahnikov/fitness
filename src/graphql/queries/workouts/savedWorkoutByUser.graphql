@@ -1,5 +1,5 @@
-query Workouts($type:String, $cursor: String, $limit: Int, $title: String){
-  workouts(type:$type, cursor:$cursor, limit:$limit, title:$title){
+query Workouts($type:String,$limit: Int, $title: String){
+  workouts(type:$type, limit:$limit, title:$title){
     workouts{
       id
       title

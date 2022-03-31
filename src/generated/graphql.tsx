@@ -317,7 +317,6 @@ export type QueryActivitiesArgs = {
 
 
 export type QueryFoodsArgs = {
-  cursor?: InputMaybe<Scalars['String']>;
   limit?: InputMaybe<Scalars['Int']>;
   title?: InputMaybe<Scalars['String']>;
   type?: InputMaybe<Scalars['String']>;
@@ -347,7 +346,6 @@ export type QueryGetWorkoutDiaryArgs = {
 
 
 export type QueryWorkoutsArgs = {
-  cursor?: InputMaybe<Scalars['String']>;
   limit?: InputMaybe<Scalars['Int']>;
   title?: InputMaybe<Scalars['String']>;
   type?: InputMaybe<Scalars['String']>;
@@ -672,7 +670,6 @@ export type GetFoodDiaryQuery = { __typename?: 'Query', getFoodDiary: { __typena
 
 export type FoodsQueryVariables = Exact<{
   type?: InputMaybe<Scalars['String']>;
-  cursor?: InputMaybe<Scalars['String']>;
   limit?: InputMaybe<Scalars['Int']>;
   title?: InputMaybe<Scalars['String']>;
 }>;
@@ -742,7 +739,6 @@ export type GetWorkoutDiaryQuery = { __typename?: 'Query', getWorkoutDiary: { __
 
 export type WorkoutsQueryVariables = Exact<{
   type?: InputMaybe<Scalars['String']>;
-  cursor?: InputMaybe<Scalars['String']>;
   limit?: InputMaybe<Scalars['Int']>;
   title?: InputMaybe<Scalars['String']>;
 }>;
@@ -1653,8 +1649,8 @@ export type GetFoodDiaryQueryHookResult = ReturnType<typeof useGetFoodDiaryQuery
 export type GetFoodDiaryLazyQueryHookResult = ReturnType<typeof useGetFoodDiaryLazyQuery>;
 export type GetFoodDiaryQueryResult = Apollo.QueryResult<GetFoodDiaryQuery, GetFoodDiaryQueryVariables>;
 export const FoodsDocument = gql`
-    query Foods($type: String, $cursor: String, $limit: Int, $title: String) {
-  foods(cursor: $cursor, limit: $limit, type: $type, title: $title) {
+    query Foods($type: String, $limit: Int, $title: String) {
+  foods(limit: $limit, type: $type, title: $title) {
     foods {
       id
       title
@@ -1685,7 +1681,6 @@ export const FoodsDocument = gql`
  * const { data, loading, error } = useFoodsQuery({
  *   variables: {
  *      type: // value for 'type'
- *      cursor: // value for 'cursor'
  *      limit: // value for 'limit'
  *      title: // value for 'title'
  *   },
@@ -2171,8 +2166,8 @@ export type GetWorkoutDiaryQueryHookResult = ReturnType<typeof useGetWorkoutDiar
 export type GetWorkoutDiaryLazyQueryHookResult = ReturnType<typeof useGetWorkoutDiaryLazyQuery>;
 export type GetWorkoutDiaryQueryResult = Apollo.QueryResult<GetWorkoutDiaryQuery, GetWorkoutDiaryQueryVariables>;
 export const WorkoutsDocument = gql`
-    query Workouts($type: String, $cursor: String, $limit: Int, $title: String) {
-  workouts(type: $type, cursor: $cursor, limit: $limit, title: $title) {
+    query Workouts($type: String, $limit: Int, $title: String) {
+  workouts(type: $type, limit: $limit, title: $title) {
     workouts {
       id
       title
@@ -2201,7 +2196,6 @@ export const WorkoutsDocument = gql`
  * const { data, loading, error } = useWorkoutsQuery({
  *   variables: {
  *      type: // value for 'type'
- *      cursor: // value for 'cursor'
  *      limit: // value for 'limit'
  *      title: // value for 'title'
  *   },

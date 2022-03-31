@@ -1,5 +1,5 @@
-query Foods($type: String, $cursor: String, $limit: Int, $title: String){
-  foods(cursor:$cursor, limit:$limit, type:$type, title:$title){
+query Foods($type: String,$limit: Int, $title: String){
+  foods(limit:$limit, type:$type, title:$title){
     foods{
       id
       title
