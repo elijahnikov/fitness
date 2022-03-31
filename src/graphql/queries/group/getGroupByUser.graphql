@@ -1,0 +1,9 @@
+query GetGroupByUser{
+  getGroupByUser{
+    id
+    name
+    createdAt
+    updatedAt
+    creatorId
+  }
+}

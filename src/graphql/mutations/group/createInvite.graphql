@@ -1,0 +1,9 @@
+mutation CreateInvite($username:String!){
+  createInvite(username:$username){
+    id
+    createdAt
+    updatedAt
+    groupId
+    userMemberId
+  }
+}

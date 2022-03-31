@@ -1,0 +1,10 @@
+query GetWeightHistoryByUser{
+  getWeightHistoryByUser{
+    weightHistory{
+      id
+      weight
+      createdAt
+      updatedAt
+    }
+  }
+}

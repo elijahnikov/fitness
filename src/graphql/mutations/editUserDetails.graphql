@@ -1,0 +1,32 @@
+mutation EditUserDetails(
+  $displayName:String,
+  $currentWeight:Int,
+  $goalWeight:Int,
+  $heightFeet:Int,
+  $heightInches:Int,
+  $age:Int,
+  $gender:String,
+  $activityLevel:String,
+  $avatar:String
+){
+  editUserDetails(
+    displayName:$displayName,
+    currentWeight:$currentWeight,
+  	goalWeight:$goalWeight,
+    heightFeet:$heightFeet,
+    heightInches:$heightInches,
+    age:$age,
+    gender:$gender,
+    activityLevel:$activityLevel,
+    avatar:$avatar
+  )
+  {
+    errors{
+      field
+      message
+    }
+    user{
+      ...UserFragment
+    }
+  }
+}

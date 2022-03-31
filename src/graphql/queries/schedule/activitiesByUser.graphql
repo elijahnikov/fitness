@@ -1,0 +1,13 @@
+query ActivitiesByUser{
+  activitiesByUser{
+		activities{
+      id
+      title
+      type
+      day
+      duration
+      createdAt
+      updatedAt
+    }
+  }
+}

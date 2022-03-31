@@ -1,0 +1,11 @@
+mutation CreateActivity($input:ScheduleInput!){
+  createActivity(input:$input){
+    id
+    title
+    type
+    day
+    duration
+    createdAt
+    updatedAt
+  }
+}

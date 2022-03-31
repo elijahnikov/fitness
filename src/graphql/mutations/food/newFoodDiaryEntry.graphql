@@ -1,0 +1,10 @@
+mutation NewFoodDiaryEntry($input:FoodDiaryInput!){
+  newFoodDiaryEntry(input:$input){
+    id
+    type
+    calorieTarget
+    userId
+    createdAt
+    updatedAt
+  }
+}

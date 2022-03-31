@@ -1,0 +1,13 @@
+query ActivitiesByUserByDay($day: String!){
+  getActivityByUserByDay(day:$day){
+     activities{
+      id
+      title
+      type
+      day
+      duration
+      createdAt
+      updatedAt
+    }
+  }
+}

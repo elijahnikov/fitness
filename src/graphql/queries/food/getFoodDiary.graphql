@@ -1,0 +1,22 @@
+query GetFoodDiary($date: String!, $limit:Int){
+  getFoodDiary(date:$date, limit:$limit){
+    foodDiary{
+      id
+      type
+      calorieTarget
+      createdAt
+      food{
+        id
+        title
+        serving
+        calories
+        protein
+        carbs
+        fat
+        type
+        createdAt
+        updatedAt
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+mutation CreatedSavedWorkout($input:SavedWorkoutInput!){
+  createSavedWorkout(input:$input){
+    id
+    title
+    type
+    sets
+    reps
+    weight
+    duration
+    createdAt
+    updatedAt
+  }
+}

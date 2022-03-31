@@ -1,0 +1,15 @@
+query Workouts($type:String, $cursor: String, $limit: Int, $title: String){
+  workouts(type:$type, cursor:$cursor, limit:$limit, title:$title){
+    workouts{
+      id
+      title
+      type
+      sets
+      reps
+      weight
+      duration
+      createdAt
+      updatedAt
+    }
+  }
+}

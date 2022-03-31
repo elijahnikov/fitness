@@ -1,0 +1,3 @@
+mutation KickMember($id:Int!){
+  kickMember(id:$id)
+}

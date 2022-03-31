@@ -1,0 +1,23 @@
+query GetWorkoutDiary($date: String!, $limit:Int){
+  getWorkoutDiary(date:$date, limit:$limit){
+    workoutDiary{
+      id
+      type
+      weight
+      duration
+      createdAt
+      updatedAt
+      workout{
+        id
+        title
+        type
+        sets
+        reps
+        weight
+        duration
+        createdAt
+        updatedAt
+      }
+    }
+  }
+}

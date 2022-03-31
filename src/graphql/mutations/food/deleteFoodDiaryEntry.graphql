@@ -1,0 +1,3 @@
+mutation DeleteFoodDiaryEntry($id:Int!){
+  deleteFoodDiaryEntry(id:$id)
+}

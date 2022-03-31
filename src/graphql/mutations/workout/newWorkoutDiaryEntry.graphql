@@ -1,0 +1,10 @@
+mutation NewWorkoutDiaryEntry($input:WorkoutDiaryInput!){
+  newWorkoutDiaryEntry(input:$input){
+    id
+    type
+    weight
+    duration
+    createdAt
+    updatedAt
+  }
+}

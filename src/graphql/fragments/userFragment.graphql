@@ -1,0 +1,22 @@
+fragment UserFragment on User {
+    id
+	username
+    displayName
+    email
+    avatar
+    currentWeight
+    goalWeight
+    heightFeet
+    heightInches
+    age
+    gender
+    activityLevel
+    calorieTarget
+    totalWorkoutsLogged
+    totalMealsLogged
+    totalWorkoutsSaved
+    totalMealsSaved
+    totalActivitiesScheduled
+    createdAt
+    updatedAt
+}

@@ -1,0 +1,3 @@
+mutation DeleteWorkoutDiaryEntry($id:Int!){
+  deleteWorkoutDiaryEntry(id:$id)
+}

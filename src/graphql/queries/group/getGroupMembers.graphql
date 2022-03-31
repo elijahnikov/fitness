@@ -1,0 +1,18 @@
+query GetGroupMembers($id:Int!){
+  getGroupMembers(id:$id){
+    members{
+      id
+      createdAt
+      updatedAt
+      groupId
+      userMemberId
+      isOwner
+      user{
+        id
+        username
+        displayName
+        avatar
+      }
+    }
+  }
+}

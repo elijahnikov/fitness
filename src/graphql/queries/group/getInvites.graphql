@@ -1,0 +1,18 @@
+query GetInvites{
+  getInvites{
+    invites{
+      id
+      createdAt
+      updatedAt
+      groupId
+      userMemberId
+      group{
+        id
+        name
+        createdAt
+        updatedAt
+        creatorId
+      }
+    }
+  }
+}

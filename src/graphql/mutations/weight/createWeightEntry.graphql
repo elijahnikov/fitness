@@ -1,0 +1,8 @@
+mutation CreateWeightEntry($weight:Float!){
+  createWeightEntry(weight:$weight){
+    id
+    weight
+    createdAt
+    updatedAt
+  }
+}
