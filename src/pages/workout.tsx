@@ -180,21 +180,6 @@ const Workout: React.FC<{}> = ({}) => {
                                 </Box>
                             )
                         }
-                        {/* {data && data.workouts.hasMore ? (
-                            <Flex>
-                                <Button onClick={() => {
-                                    fetchMore({
-                                        variables: {
-                                            limit: variables?.limit,
-                                            cursor: data.workouts.workouts[data.workouts.workouts.length - 1].createdAt
-                                        },
-                                    })
-                                }}
-                                isLoading={loading} m='auto' my={8}>
-                                    Load More
-                                </Button>
-                            </Flex>
-                        ): null} */}
                     </Box>
                 </Box>
             </Wrapper>

@@ -181,21 +181,6 @@ const Food: React.FC<{}> = ({}) => {
                             </Box>
                         )
                     }
-                    {/* {data && data.foods.hasMore ? (
-                        <Flex>
-                            <Button onClick={() => {
-                                fetchMore({
-                                    variables: {
-                                        limit: variables?.limit,
-                                        cursor: data.foods.foods[data.foods.foods.length -1].createdAt
-                                    },yy
-                                })
-                            }}
-                            isLoading={loading} m='auto' my={8}>
-                                Load More
-                            </Button>
-                        </Flex>
-                    ) : null} */}
                 </Box>
             </Wrapper>
         </Container>
