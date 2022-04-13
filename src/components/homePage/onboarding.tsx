@@ -25,22 +25,22 @@ export const Onboarding: React.FC<onboardingProps> = ({}) => {
     const {data, loading} = useMeQuery()
     const [editUserDetails] = useEditUserDetailsMutation();
     const [showError, setShowError] = useState(false);
-    const [file, setFile] = useState(null)
+    // const [file, setFile] = useState(null)
 
-    const [signS3] = useSignS3Mutation()
+    // const [signS3] = useSignS3Mutation()
 
-    const onDrop = (files) => {
-        setFile(files[0])
-    } 
+    // const onDrop = (files) => {
+    //     setFile(files[0])
+    // } 
     
-    const uploadToS3 = async (file, signedRequest) => {
-        const options = {
-            headers: {
-                "Content-Type": file.type
-            }
-        };
-        await axios.put(signedRequest, file, options)
-    }
+    // const uploadToS3 = async (file, signedRequest) => {
+    //     const options = {
+    //         headers: {
+    //             "Content-Type": file.type
+    //         }
+    //     };
+    //     await axios.put(signedRequest, file, options)
+    // }
     
     let username = null
     if (loading)
@@ -72,14 +72,14 @@ export const Onboarding: React.FC<onboardingProps> = ({}) => {
                         activityLevel: "",
                     }}
                     onSubmit={async (values, {setErrors}) => {
-                        const s3Response = await signS3({
-                            variables: {
-                                filename: file.name,
-                                filetype: file.type
-                            }
-                        })
-                        const {signedRequest, url} = s3Response.data.signS3
-                        await uploadToS3(file, signedRequest)
+                        // const s3Response = await signS3({
+                        //     variables: {
+                        //         filename: file.name,
+                        //         filetype: file.type
+                        //     }
+                        // })
+                        // const {signedRequest, url} = s3Response.data.signS3
+                        // await uploadToS3(file, signedRequest)
                         const response = await editUserDetails({variables: {
                             currentWeight: values.currentWeight,
                             goalWeight: values.goalWeight,
@@ -88,7 +88,7 @@ export const Onboarding: React.FC<onboardingProps> = ({}) => {
                             age: values.age,
                             gender: values.gender,
                             activityLevel: values.activityLevel,
-                            avatar: url
+                            avatar: null
                         }})
                         if (response.data?.editUserDetails.errors)
                         {
@@ -103,7 +103,7 @@ export const Onboarding: React.FC<onboardingProps> = ({}) => {
                 >
                     {(formik) => (
                         <Form>
-                            <Box mt={4} mb={4}>  
+                            {/* <Box mt={4} mb={4}>  
                                 <FormLabel 
                                     color='white'>
                                         Profile Picture
@@ -120,7 +120,7 @@ export const Onboarding: React.FC<onboardingProps> = ({}) => {
                                     </section>
                                 )}
                                 </Dropzone>
-                            </Box>
+                            </Box> */}
                             <NumberField name="currentWeight" placeholder="weight(kg)" label="Current Weight"/>
                             <Box mt={4}>
                                 <NumberField name="goalWeight" placeholder="weight(kg)" label="Goal Weight"/>

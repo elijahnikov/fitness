@@ -35,20 +35,20 @@ export const AddFoodModal: React.FC<addFoodModalProps> = ({}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [createSavedFood] = useCreateSavedFoodMutation();
 
-    const [signS3] = useSignS3Mutation()
-    const [file, setFile] = useState(null)
-    const onDrop = (files) => {
-        setFile(files[0])
-    }
+    // const [signS3] = useSignS3Mutation()
+    // const [file, setFile] = useState(null)
+    // const onDrop = (files) => {
+    //     setFile(files[0])
+    // }
 
-    const uploadToS3 = async (file, signedRequest) => {
-        const options = {
-            headers: {
-                "Content-Type": file.type
-            }
-        };
-        await axios.put(signedRequest, file, options)
-    }
+    // const uploadToS3 = async (file, signedRequest) => {
+    //     const options = {
+    //         headers: {
+    //             "Content-Type": file.type
+    //         }
+    //     };
+    //     await axios.put(signedRequest, file, options)
+    // }
 
     return (
         <>
@@ -82,21 +82,21 @@ export const AddFoodModal: React.FC<addFoodModalProps> = ({}) => {
                             }
                             else 
                             {   
-                                let url = ''
-                                if (file)
-                                {
-                                    const s3Response = await signS3({
-                                        variables: {
-                                            filename: file.name,
-                                            filetype: file.type
-                                        }
-                                    })
-                                    const {signedRequest} = s3Response.data.signS3
-                                    url = s3Response.data.signS3.url
-                                    console.log(signedRequest)
-                                    console.log(url)
-                                    await uploadToS3(file, signedRequest)
-                                }
+                                // let url = ''
+                                // if (file)
+                                // {
+                                //     const s3Response = await signS3({
+                                //         variables: {
+                                //             filename: file.name,
+                                //             filetype: file.type
+                                //         }
+                                //     })
+                                //     const {signedRequest} = s3Response.data.signS3
+                                //     url = s3Response.data.signS3.url
+                                //     console.log(signedRequest)
+                                //     console.log(url)
+                                //     await uploadToS3(file, signedRequest)
+                                // }
                                 const response = await createSavedFood({
                                     variables: {
                                         input: {
@@ -107,7 +107,7 @@ export const AddFoodModal: React.FC<addFoodModalProps> = ({}) => {
                                             protein: values.protein,
                                             carbs: values.carbs,
                                             fat: values.fat,
-                                            pictureUrl: url
+                                            pictureUrl: null
                                         }
                                     }
                                 })
@@ -156,7 +156,7 @@ export const AddFoodModal: React.FC<addFoodModalProps> = ({}) => {
                                 <Box mt={4}>
                                     <NumberField name="fat" placeholder="fat" label="Fat"/>
                                 </Box>
-                                <Box mt={4} mb={6}>  
+                                {/* <Box mt={4} mb={6}>  
                                     <FormLabel 
                                         color='white'>
                                             Picture
@@ -173,7 +173,7 @@ export const AddFoodModal: React.FC<addFoodModalProps> = ({}) => {
                                         </section>
                                     )}
                                     </Dropzone>
-                                </Box>
+                                </Box> */}
                                 {showError ? <Text mt={4} color='red.400'>Please ensure you have completed all fields.</Text> : null}
                                 <Box float='right'>
                                     <Button bg={'purple.100'} mr={4} color={'white'} isLoading={isSubmitting} type="submit">save</Button>
