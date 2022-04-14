@@ -16,7 +16,10 @@ export const MapData: React.FC<mapDataProps> = ({data, day}) => {
             {/* <Divider bg='gray.900' mb={3}/> */}
             {data.length === 0 ? <Text textAlign='center'mb={2}>Nothing saved for {day}</Text>: (
                 data.map((a) =>  !a ? <div>Nothing here</div> : (
-                    <Box position={'relative'} borderRadius={10} bg='gray.800' p={2} mb={4} key={a.id}>
+                    <Box position={'relative'} borderRadius={10} 
+                    border='1px' 
+                    borderColor='#2B2B2B'
+                    bg='#0C0E10' p={2} mb={4} key={a.id}>
                         <DeleteActivity activityId={a.id}/>
                         <Box 
                             bg={scheduleColorToActivity(a.type)} 

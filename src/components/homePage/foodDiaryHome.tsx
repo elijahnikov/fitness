@@ -68,10 +68,13 @@ export const FoodDiaryHome: React.FC<foodDiaryHomeProps> = ({data, loading, erro
                 </Box>
 
                 :(
-                    <Box width='100%' display='flex' justifyContent={'center'}>
+                    <Box width='100%'  display='flex' justifyContent={'center'}>
                         <Stack spacing={4}>
                             {data.getFoodDiary.foodDiary.map((a) => !a ? <div>Nothing here</div> : (
-                                <Box minH={100} minW={600} maxW={600} position='relative' borderRadius={10} bg='gray.800' key={a.id} p={4}>
+                                <Box minH={100} minW={600} maxW={600} position='relative' borderRadius={10} 
+                                        border='1px' 
+                                        borderColor='#2B2B2B'
+                                        bg='#0C0E10' key={a.id} p={4}>
                                     <Text fontSize={14} fontWeight={'bold'} color='gray.500'>
                                         {a.type.toUpperCase()}
                                     </Text>

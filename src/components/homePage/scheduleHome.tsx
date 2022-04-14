@@ -68,7 +68,10 @@ export const ScheduleHome: React.FC<scheduleHomeProps> = ({}) => {
                 <Box mt={7} width='100%' display='flex' justifyContent={'center'}>
                     <HStack spacing={4}>
                         {data.getActivityByUserByDay.activities.map((a) => !a ? <div>Nothing here</div> : (
-                            <Box position='relative' ml={2} minW={'250px'} borderRadius={10} bg='gray.800' key={a.id} p={0}>
+                            <Box position='relative' ml={2} minW={'250px'} borderRadius={10} 
+                            border='1px' 
+                            borderColor='#2B2B2B'
+                            bg='#0C0E10' key={a.id} p={0}>
                                 <Heading  pl={4} pt={4}size='sm'>{a.title}</Heading>
                                 <Text fontSize={14} pl={4} mb={5} color='gray.400'>{a.type} - {a.duration}min</Text>
                                 <Box height={2} borderBottomRadius={4}  width='100%' bg={scheduleColorToActivity(a.type)} position={'absolute'} bottom={0}/>
