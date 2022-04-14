@@ -40,9 +40,6 @@ export const FoodActivity: React.FC<foodActivityProps> = ({activityData}) => {
                 p={4}
                 overflow='hidden'
             >   
-                <Box height='100%' float={'left'}>
-                    <Avatar size='lg' mr={4} src={activityData.foodDiary.food.pictureUrl} name={activityData.foodDiary.food.title}/>
-                </Box>
                 <Box float='left'>
                     <Heading size='sm' color='gray.500' fontWeight={'semibold'}>{activityData.foodDiary.type}</Heading>                
                     <Heading size='lg'>{activityData.foodDiary.food.title}</Heading>
